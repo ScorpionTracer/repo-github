@@ -5,15 +5,14 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Введите операцию:" + "\n" + "1. Сложение" + "\n" + "2. Вычитание" + "\n" + "3. Умножение" + "\n" + "4. Деление");
+        System.out.println("Введите операцию:\n1. Сложение\n2. Вычитание\n3. Умножение\n4. Деление");
         var scanner = new Scanner(System.in);
         int operation = scanner.nextInt();
         System.out.println("Введите первое число");
-        int a = scanner.nextInt();
+        double a = scanner.nextDouble();
         System.out.println("Введите второе число");
-        int b = scanner.nextInt();
-        int result = 0;
-        //Это проба IDEA
+        double b = scanner.nextDouble();
+        double result = 0;
         if (operation == 1) {
             result = a + b;
         } else if (operation == 2) {
@@ -22,13 +21,13 @@ public class Main {
             result = a * b;
         } else if (operation == 4) {
             if (b == 0) {
-                throw new ArithmeticException ("На ноль делить нельзя") ;
+                throw new ArithmeticException("На ноль делить нельзя");
             } else {
                 result = a / b;
             }
         } else {
             throw new Exception("Введите правильную команду");
         }
-        System.out.println(String.format("Результат = %d ", result));
+        System.out.println(String.format("Результат = %s ", result));
     }
 }
